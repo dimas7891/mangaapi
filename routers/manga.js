@@ -222,7 +222,7 @@ router.get("/genres/:slug/:pagenumber", async (req, res) => {
   const url =
     pagenumber === "1"
       ? `https://data.komiku.id/pustaka/?orderby=modified&genre=${slug}&genre2=&status=&category_name=`
-      : `https://data.komiku.id/pustaka/page/${pagenumber}/?orderby=modified&genre=${slug}&genre2&status&category_name`;
+      : `https://data.komiku.id/pustaka/page/${pagenumber}/?orderby=modified&genre=${slug}&genre2=&status=&category_name=`;
   try {
     const response = await AxiosService(url);
     const $ = cheerio.load(response.data);
